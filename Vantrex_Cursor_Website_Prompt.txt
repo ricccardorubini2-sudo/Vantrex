@@ -1,0 +1,481 @@
+Build the complete Vantrex company website in this Cursor project.
+
+Act as a senior web designer and developer. Implement the actual website, its content, navigation, contact form, responsive layouts, and necessary project files. Continue through verification and fixes; do not stop after proposing a plan or creating a homepage mockup.
+
+The website language is English. The company is Vantrex, an Institutional Digital Asset Liquidity Firm. Its three products are Liquidity Management, Market Making, and Institutional OTC.
+
+A. SOURCE OF TRUTH AND REFERENCE RULES
+
+The complete source brief from "third party.docx" is reproduced in Section G below, including all nine tables. Treat it as the controlling business, content, and scope specification. Include every requirement, every table row, every service, every audience group, every CTA, and every qualification. If the DOCX is also in the project, cross-check it; the build must still be possible using this self-contained prompt alone.
+
+Use these references for their assigned purposes:
+- Content reference: https://www.gravityteam.co/ . Study how it explains institutional liquidity, market making, and OTC services. Adapt its clarity and service-focused organization. Vantrex's supplied copy and three-product scope take precedence.
+- Typography, style, and site-format reference: https://currency.com/ . Study its large display typography, clean sans-serif body text, spacious sections, modular service presentation, restrained controls, and clear CTA hierarchy. Adapt the visual approach to Vantrex's specified navy, dark-blue, silver, and off-white identity.
+
+Inspect the current references if tools permit. If they cannot be accessed, continue using the detailed design instructions below and disclose that limitation in the handoff. Do not claim to have inspected a site you could not access.
+
+Preserve the supplied headlines, product labels, descriptions, CTA labels, and qualifying statements. You may change line breaks, punctuation typography, and presentation without changing meaning. Editorial labels such as "Headline", "Description", "Section 1", and table-column instructions are specifications, not text to print on the public website. The Final Brand Messaging table checks consistency; it does not require a duplicate public section.
+
+Keep "selected", "eligible", "approved", "potential", "agreed", "available liquidity", "supported", "may", and "independent investment consideration" where they qualify the supplied copy. Keep the sentence about returns beside the liquidity-provider benefits, visible and readable.
+
+The group has no brand name in this brief. Use "Group Ecosystem" or "broader group ecosystem" and the supplied names VaultAlpha, Velorapay, and Vantrex. Do not invent a group name, legal ownership structure, regulatory status, or additional relationship.
+
+Do not transfer either reference company's metrics, clients, logos, testimonials, country coverage, licenses, integrations, settlement speeds, product promises, or company history. Do not add a fourth product, an execution-management platform, exchange-listing services, retail accounts, cards, loans, staking, a token, or a public investment product. Use all supplied Vantrex services, without expanding them into unsupported capabilities.
+
+Do not invent AUM, pool sizes, trading volumes, client counts, partner names, financial returns, APR/APY, fees, minimum transaction sizes, uptime, execution guarantees, supported networks, addresses, email addresses, registration numbers, founding dates, executives, or social URLs. The supplied business narrative is build copy; it is not independent proof that every capability is live. Record operational facts requiring owner confirmation in the internal launch notes, while completing all specified layouts and content. If confirmed launch information contradicts the brief, flag that conflict explicitly rather than silently changing scope or publishing the contradiction.
+
+B. REQUIRED ARCHITECTURE AND CONTENT PLACEMENT
+
+Build four distinct, directly accessible pages:
+| Page | Route |
+| --- | --- |
+| Home | / |
+| Liquidity Management | /liquidity-management |
+| Market Making | /market-making |
+| Institutional OTC | /institutional-otc |
+
+The two shared homepage sections are Institutional Partnerships at /#partnerships and Contact at /#contact. Add /#solutions for the solutions section. Link every product page to the shared Institutional Partnerships section and the appropriate contact inquiry. A separate About, Partnerships, or Contact page is not required.
+
+Preserve these navigation destinations and labels: Home, Liquidity Management, Market Making, Institutional OTC, Contact. Use an accessible Solutions dropdown containing the three individually named product links, with Home and Contact alongside it. Include Institutional Partnerships in the footer and as a contextual link on every product page. The mobile menu must expose the same destinations.
+
+Homepage sequence:
+1. Hero, with the exact headline, description, supporting statement, and two CTAs.
+2. A compact company introduction and mission, integrated into the hero's supporting area or immediately beneath it, using Company Overview from the source.
+3. Our Solutions, with all three names, headlines, descriptions, and dedicated-page links.
+4. Our Institutional Ecosystem, including all five counterparty groups and the explicit supplier-and-user relationship.
+5. Group Ecosystem, retaining each company's core business and relationship with Vantrex from the Company Overview table, plus the Group Ecosystem copy. Use readable group cards or a compact relationship layout.
+6. Institutional Partnerships, including every row of its three-column mapping.
+7. Final CTA, "Bring Liquidity to the Table.", with both buttons.
+8. Contact, including the complete form.
+9. Shared footer.
+
+Use the Final Business Concept to explain Vantrex's function and the complementary roles of the three products in the overview, solutions, and group sections. Represent all of its substantive meaning without creating duplicate pages or repeating the same paragraphs several times.
+
+Each product page must contain every hero, product eyebrow, section, service, benefit/principle/advantage, qualification, and final CTA specified for that page. Keep the three products commercially distinct: source/manage/allocate; deploy/quote/trade; source/exchange/settle. Do not collapse them into interchangeable generic liquidity copy.
+
+C. VISUAL DESIGN
+
+Deliver a premium, modern institutional website appropriate to a credible medium-sized financial firm. Use the visual clarity and spacious format of Currency.com within the brand direction in the brief.
+
+Typography:
+- Currency.com's inspected styles identify Norm Display for display text and ALS Hauss for main text. Use that pairing if suitable, permitted font files are supplied. Do not copy or hotlink the reference site's font binaries.
+- If those files are unavailable, use Manrope for headings and Inter for body/UI text as a deliberate substitute. Keep fonts replaceable through centralized tokens. Include appropriate license files for any fonts bundled into the project.
+- Use medium or semibold display headings, comfortable body text, restrained tracking, and a clear hierarchy. Suggested desktop hero size: 64–80px; mobile: 36–44px, adjusted to fit. Body: 16–18px. Avoid clipping or awkward single-word overflow, especially on the OTC headline.
+
+Suggested implementation tokens, adjustable within the required palette:
+- Deep navy: #081426.
+- Dark blue: #15365B.
+- Off-white: #F7F8FA.
+- Silver: #BBC4CE for decorative elements and borders.
+- Restrained blue accent: #2D5BD1.
+- Use darker readable text on light backgrounds; silver must not become low-contrast body text.
+
+Use a roughly 1200–1280px maximum content width, generous section spacing, consistent alignment, restrained rounded cards/buttons, subtle borders, and limited shadows. Combine off-white content sections with selected navy hero or CTA areas. Establish a coherent system across all four pages instead of styling each page independently.
+
+Use abstract liquidity flows or network graphics sparingly. Create lightweight original SVG/CSS graphics; the group relationship graphic must communicate the supplied roles accurately. Decorative motion must not resemble live market data or imply performance. Avoid unnecessary charts, maps, stock trader photos, excessive gradients, heavy 3D scenes, and visual clutter.
+
+If an approved Vantrex logo exists in the project, use it. Otherwise use a clean typographic Vantrex wordmark with a replaceable logo component. The DOCX contains no embedded logo. Do not invent group-company logos or clickable external URLs.
+
+Provide subtle hover/focus states and short, restrained transitions. Respect reduced-motion preferences. Content must remain visible if animation or JavaScript fails. Use a compact header and make anchor destinations visible below it. Render source tables as suitable cards or responsive tables while preserving every relationship and detail.
+
+D. NAVIGATION AND CTA BEHAVIOR
+
+Implement these exact CTA labels and destinations:
+| CTA or link | Destination | Contact category |
+| --- | --- | --- |
+| Explore Solutions | /#solutions | None |
+| Partner With Us | /#partnerships | None |
+| Become a Liquidity Partner | /?inquiry=capital#contact | Provide Liquidity / Capital Partnership |
+| Request Liquidity | /#contact | Let the visitor choose |
+| Discuss Market Making | /?inquiry=market-making#contact | Request Market Making |
+| Request an OTC Quote | /?inquiry=otc#contact | Institutional OTC / Stablecoin Liquidity |
+| Explore an Institutional Partnership | /?inquiry=strategic#contact | Strategic Partnership |
+| Institutional Partnerships | /#partnerships | None |
+| Contact | /#contact | Let the visitor choose |
+
+The three solution cards link to their dedicated product routes. All links must work from the homepage, product pages, mobile menu, and direct URL entry. Contact prefills must work both on cross-page navigation and repeated same-page CTA clicks. Validate query values against the four allowed categories; unknown values leave the category unselected. Keep the category editable. Do not put names, emails, or messages in URLs.
+
+Use proper anchors for navigation and buttons for actions. No dead buttons, empty hrefs, fake external links, or simulated quote widgets. "Request an OTC Quote" opens an inquiry, not a fabricated live quote or execution screen.
+
+E. CONTACT FORM AND PROJECT IMPLEMENTATION
+
+Include all five form fields with visible labels and make them required:
+1. Company name.
+2. Contact name.
+3. Business email.
+4. Inquiry category, using exactly the four categories in the source.
+5. Message.
+
+Use an accessible select, sensible field limits, email-format validation, inline error messages, a submitting state, and success/error feedback announced to assistive technology. Preserve entered values after errors and prevent duplicate clicks during submission. Label the submit button "Send Inquiry". Do not add mandatory phone, budget, wallet, or document-upload fields.
+
+Implement a server-side inquiry endpoint and a configurable email-delivery adapter, using an existing project integration if one is present. Otherwise use SMTP configured through environment variables. Validate and sanitize on the server as well as in the browser; include a honeypot and deployment-appropriate request throttling. Keep credentials server-only and avoid logging the visitor's full message or personal details.
+
+Show success only after the configured delivery service accepts the message. If delivery is not configured, the project must still run and the form must show an honest unavailable state; never claim that a message was sent. Show any technical setup explanation only in development or internal documentation. Leave missing inbox/contact values blank in configuration. Do not invent an address such as hello@vantrex.com.
+
+Technical choices:
+- Inspect the existing repository first. Preserve its framework and conventions where suitable.
+- For an empty project, use Next.js with the App Router, TypeScript, and Tailwind CSS, using compatible supported dependencies and a lockfile. Use static or prerendered marketing pages and only the server endpoint needed for contact delivery. Do not force a fully static export that breaks the contact endpoint.
+- Store website copy and structured service/partner data in centralized, clearly named local TypeScript/JSON files. Use shared components for navigation, footer, product heroes, service groups, CTAs, and contact.
+- Make copy, fonts, colors, logo, domain, contact destination, and group links easy to update. A CMS, database, login system, trading connection, or paid content service is unnecessary for this brief.
+- Include .env.example with blank values for missing site/delivery configuration; keep secrets out of version control. Document whichever SMTP or existing delivery settings are actually implemented.
+- Keep the website mostly static, with minimal client-side JavaScript. Do not build real-time order books, price feeds, client dashboards, or liquidity-pool performance charts, including decorative versions of those widgets.
+- Include semantic HTML, one H1 per page, logical heading levels, keyboard navigation, visible focus, accessible dropdown/menu behavior, descriptive labels, alt text where appropriate, and readable contrast. Ensure the mobile menu can be closed with Escape and returns focus appropriately.
+- Add unique page titles/descriptions, sensible Open Graph metadata, a favicon/wordmark asset, and a 404 page. Configure canonical URLs and sitemap generation from the actual site URL; do not fabricate a production domain or organizational metadata. Do not expose internal review notes in public structured data.
+- Use a clean footer with brand, company descriptor, product links, Partnerships, Contact, and copyright. Include real contact/social/legal links only if supplied; do not create empty legal pages or copy another company's legal text. List any missing owner-provided launch material in the handoff.
+- Include README instructions for installation, local development, content editing, form configuration, build, and deployment. Complete the local build without requiring missing brand or delivery inputs. Do not publish automatically.
+
+F. COMPLETION AND VERIFICATION
+
+Before implementation, create a concise requirements-checklist.md in the project. Give each atomic requirement an identifier, source section/table-row reference, target route/component, status, and verification note. Cover source Sections 1–10, the Final Business Concept, all nine source tables, and the implementation requirements above. Use it while building, and reconcile it against the completed site before finishing.
+
+Verify explicitly:
+- Four real page routes, two shared homepage sections, all navigation destinations, all product links, and links from all three product pages to Partnerships.
+- Every supplied headline, eyebrow, supporting statement, CTA label, description, and qualifying sentence; no lorem ipsum or shortened replacement copy that loses requirements.
+- Three solution summaries; nine product services; five institutional counterparty groups; five complete partnership mappings; three group-company roles and relationships; three liquidity-provider benefits; three market-making principles; three OTC advantages; four inquiry categories; five form fields.
+- The visible returns qualification and the conditional VaultAlpha investment-introduction statement.
+- Supplier-and-user reciprocity, external institutional counterparties, selected asset examples, managed inventory plus external liquidity, and the payment/settlement relationship with Velorapay.
+- No invented financial/company claims or prohibited dynamic features.
+- Correct CTA/category prefills, cross-page and same-page anchors, direct URL entry, keyboard dropdowns, mobile menu, and form validation/success/error/unconfigured behavior. Use mocked delivery for automated tests; clearly distinguish mocks from live delivery verification.
+- Layout at approximately 360px, 768px, 1024px, and 1440px; no horizontal page overflow, clipped headlines, unreadable tables, inaccessible controls, or hidden required content. Preserve all content on mobile.
+
+Run the project's relevant build, type-check, lint, and targeted functional checks, fix material failures, and inspect rendered pages when browser tools are available. Do not claim that unrun checks passed. Keep testing proportionate to these concrete requirements.
+
+Finish with the implemented site and a concise handoff covering files/routes created, how to run it, verification results, remaining owner-provided launch inputs, and any documented limitation. Distinguish "implemented" from "needs configuration" and "needs owner confirmation" in the checklist. Do not mark a missing requirement complete because it was merely mentioned in the README.
+
+G. COMPLETE AUTHORITATIVE SOURCE BRIEF
+
+The following is the complete supplied document content. Read it in full and implement it according to Sections A–F. All nine source tables are retained. Its strategy and architecture notes guide the build; page copy belongs on the appropriate public page rather than on a page displaying this specification.
+
+Vantrex — Website Structure & Content
+
+Company Type: Institutional Digital Asset Liquidity Firm
+
+Core Products: Liquidity Management · Market Making · Institutional OTC
+
+Positioning: Capital in Motion. Markets in Reach.
+
+## 1. Company Overview
+
+Vantrex sources, manages, and deploys institutional digital-asset liquidity across trading, investment, and payment markets.
+
+Through liquidity management, market making, and institutional OTC execution, the firm connects capital providers with exchanges, trading institutions, RWA platforms, DeFi protocols, and payment networks.
+
+Our mission: Connect institutional liquidity supply with real market demand, creating trading opportunities, supporting efficient asset deployment, and enabling large-scale digital-asset transactions.
+
+Strategic role within the group(group has no brand yet)
+
+| Company | Core Business | Relationship with Vantrex |
+| --- | --- | --- |
+| VaultAlpha | Venture capital investing in protocols, exchanges, trading firms, and RWA | Access to institutional liquidity, investment execution, and liquidity support for eligible portfolio projects |
+| Velorapay | Institutional crypto payments and settlement | Access to stablecoin reserves, wholesale conversions, and settlement liquidity |
+| Vantrex | Liquidity management, market making, and OTC | Sources and manages liquidity for group businesses and external institutional counterparties |
+
+Strategic differentiation: Vantrex does not merely trade digital assets. It connects institutional capital, market liquidity demand, and payment flows through one specialized liquidity network.
+
+## 2. Website Architecture
+
+The website should have four main pages and two shared sections, keeping the structure professional, concise, and easy to maintain.
+
+| Page / Section | Main Purpose |
+| --- | --- |
+| Home | Introduce the company, business model, products, and institutional ecosystem |
+| Liquidity Management | Attract liquidity capital and establish liquidity-sourcing relationships |
+| Market Making | Attract exchanges, RWA projects, token issuers, and DeFi protocols |
+| Institutional OTC | Attract trading firms, OTC desks, payment providers, and institutional investors |
+| Institutional Partnerships | Explain how different institutions cooperate with Vantrex |
+| Contact | Generate liquidity partnership and institutional trading inquiries |
+
+Institutional Partnerships and Contact can be shared sections on the homepage rather than separate pages.
+
+## 3. HOME PAGE
+
+### Section 1 — Hero
+
+Headline:
+
+Capital in Motion. Markets in Reach.
+
+Description:
+
+We source, manage, and deploy institutional digital-asset liquidity across trading venues, tokenized markets, and payment networks.
+
+Supporting statement:
+
+Connecting liquidity supply with institutional market demand.
+
+Buttons: Explore Solutions | Partner With Us
+
+### Section 2 — Our Solutions
+
+Headline: One Liquidity Network. Three Capabilities.
+
+| Product | Headline | Description |
+| --- | --- | --- |
+| Liquidity Management | Build the Supply. | Source institutional capital and digital assets, manage liquidity pools, and allocate resources across trading and settlement needs. |
+| Market Making | Activate the Market. | Provide direct liquidity to centralized exchanges, decentralized protocols, and tokenized-asset markets. |
+| Institutional OTC | Execute at Scale. | Facilitate institutional block trades, digital-asset sourcing, and wholesale stablecoin conversions. |
+
+Each product links to its dedicated page.
+
+### Section 3 — Our Institutional Ecosystem
+
+Headline: Built for the Institutions Moving Digital Assets.
+
+We connect liquidity providers with organizations requiring capital efficiency, active trading liquidity, and reliable asset execution.
+
+Target counterparties:
+
+Exchanges and trading firms
+
+Institutional liquidity providers and OTC desks
+
+RWA platforms and DeFi protocols
+
+Stablecoin issuers and payment institutions
+
+Digital-asset funds and treasury operators
+
+Core message: Institutions can work with Vantrex both as liquidity suppliers and liquidity users, creating opportunities for reciprocal trading and long-term partnerships.
+
+### Section 4 — Group Ecosystem
+
+Headline: Connected by Capital. Powered by Liquidity.
+
+Vantrex strengthens an interconnected digital-asset ecosystem:
+
+VaultAlpha: Investment opportunities and strategic relationships across protocols, trading infrastructure, and RWA.
+
+Velorapay: Institutional payment flows and recurring stablecoin settlement demand.
+
+Vantrex: Institutional liquidity sourcing, market making, and wholesale asset execution.
+
+Together, the businesses connect investment capital, trading activity, and real payment demand.
+
+### Section 5 — Final CTA
+
+Headline: Bring Liquidity to the Table.
+
+Whether you provide institutional capital, require trading liquidity, or need wholesale digital-asset execution, explore a commercial relationship with Vantrex.
+
+Buttons: Become a Liquidity Partner | Request Liquidity
+
+## 4. LIQUIDITY MANAGEMENT PAGE
+
+Product 01 — Source · Manage · Allocate
+
+Hero
+
+Headline: Capital That Finds Its Market.
+
+We connect institutional digital-asset capital with defined liquidity opportunities across trading, investment, and payment markets.
+
+### Section 1 — Our Liquidity Solutions
+
+Headline: Liquidity Sourced. Liquidity Allocated.
+
+| Service | Specific Activity |
+| --- | --- |
+| Institutional Liquidity Sourcing | Source USDT, USDC, BTC, ETH, and selected digital assets through institutional capital providers, OTC desks, and trading counterparties. |
+| Liquidity Pool Management | Manage dedicated asset reserves and liquidity allocations for trading, market making, settlement, and institutional transactions. |
+| Liquidity Deployment | Allocate liquidity to selected market-making strategies, OTC transactions, and approved institutional liquidity arrangements. |
+
+### Section 2 — For Capital & Liquidity Providers
+
+Headline: Put Digital Assets to Work.
+
+Vantrex offers institutional liquidity partners opportunities to deploy their assets through defined market-making, trading, and liquidity strategies.
+
+Partner benefits:
+
+Access to institutional liquidity demand and trading opportunities.
+
+Potential revenue from agreed liquidity and trading arrangements.
+
+Exposure to a broader network of exchanges, market makers, and institutional counterparties.
+
+Returns depend on strategy performance, market conditions, and agreed terms.
+
+### Section 3 — CTA
+
+Headline: Have Liquidity? Find Its Next Opportunity.
+
+Connect with Vantrex to explore institutional liquidity-sourcing and capital deployment partnerships.
+
+Button: Become a Liquidity Partner
+
+## 5. MARKET MAKING PAGE
+
+Product 02 — Deploy · Quote · Trade
+
+Hero
+
+Headline: Liquidity That Moves Markets.
+
+We provide direct digital-asset liquidity to exchanges, tokenized-asset markets, and DeFi protocols, supporting market depth, efficient pricing, and active trading.
+
+### Section 1 — Market-Making Solutions
+
+Headline: Where Markets Need Depth, We Bring Liquidity.
+
+| Service | Specific Activity |
+| --- | --- |
+| Exchange Market Making | Provide continuous bid/ask quotes, trading inventory, and order-book liquidity for selected CEX markets. |
+| Token & RWA Liquidity | Support secondary-market trading for eligible tokens, RWA products, and tokenized financial assets. |
+| DeFi Liquidity Provision | Supply and manage liquidity across selected DEX markets, protocols, and on-chain liquidity pools. |
+
+### Section 2 — Our Approach
+
+Headline: More Than Quoting Prices.
+
+Our market-making operations combine managed digital-asset inventory, execution strategies, and institutional counterparty relationships.
+
+Three principles:
+
+Market Depth: Maintain executable buy and sell liquidity.
+
+Capital Efficiency: Deploy and rebalance inventory where it is needed.
+
+Institutional Connectivity: Establish reciprocal trading relationships with exchanges, trading firms, and protocols.
+
+### Section 3 — Strategic Partnerships
+
+Headline: Liquidity With a Wider Network.
+
+Beyond market making, Vantrex connects trading venues and asset issuers with institutional liquidity partners, trading counterparties, and potential strategic capital relationships.
+
+Through the broader group ecosystem, suitable projects may also be introduced to VaultAlpha for independent investment consideration.
+
+### Section 4 — CTA
+
+Headline: Build a More Liquid Market.
+
+Discuss market-making requirements for your exchange, RWA platform, token, or DeFi protocol.
+
+Button: Discuss Market Making
+
+## 6. INSTITUTIONAL OTC PAGE
+
+Product 03 — Source · Exchange · Settle
+
+Hero
+
+Headline: The Assets You Need. The Liquidity to Move Them.
+
+Access institutional digital-asset liquidity for large transactions, stablecoin conversions, and treasury settlement.
+
+### Section 1 — OTC Solutions
+
+Headline: Institutional Liquidity, Without the Fragmentation.
+
+| Service | Specific Activity |
+| --- | --- |
+| Institutional Block Trading | Facilitate large BTC, ETH, and selected digital-asset transactions through bilateral execution and professional counterparties. |
+| Stablecoin Liquidity | Source, exchange, and supply wholesale USDT, USDC, and other supported stablecoins. |
+| Treasury & Payment Liquidity | Provide asset conversion and settlement liquidity to payment companies, institutional treasuries, and trading businesses. |
+
+### Section 2 — Why Institutions Choose Vantrex
+
+Headline: One Relationship. Broader Liquidity Access.
+
+Vantrex combines managed inventory with external institutional liquidity relationships to help clients efficiently source and exchange digital assets.
+
+Three advantages:
+
+Asset Access: Obtain the required digital assets or stablecoin inventory.
+
+Institutional Execution: Execute large transactions through available liquidity and competitive bilateral quotations.
+
+Settlement Liquidity: Support treasury conversion and payment-related asset requirements.
+
+### Section 3 — Payment Ecosystem
+
+Headline: Liquidity Behind Digital Payments.
+
+Vantrex supports payment institutions, including Velorapay's ecosystem, with wholesale stablecoin sourcing, asset conversions, and liquidity for cross-border settlement.
+
+This creates recurring liquidity demand and direct relationships with payment operators, exchanges, and trading firms.
+
+### Section 4 — CTA
+
+Headline: Move Size. Access Liquidity.
+
+Connect with our institutional desk for block trading, stablecoin conversions, and wholesale liquidity requirements.
+
+Button: Request an OTC Quote
+
+## 7. INSTITUTIONAL PARTNERSHIPS
+
+This should be a concise section on the homepage and linked from product pages.
+
+Headline: Different Markets. Shared Opportunities.
+
+Vantrex connects institutions that provide liquidity, operate trading markets, and require digital assets for investment, execution, or settlement.
+
+| Partner Type | What They Need | What Vantrex Provides |
+| --- | --- | --- |
+| Institutional Capital Providers | Liquidity deployment and potential trading returns | Managed liquidity opportunities and defined commercial arrangements |
+| Exchanges & DEXs | Trading depth and efficient execution | Direct market making and liquidity inventory |
+| Trading Firms & OTC Desks | Wholesale inventory and new counterparties | Bilateral trades, asset sourcing, and institutional liquidity |
+| RWA & DeFi Protocols | Market liquidity, trading counterparties, strategic capital access | Market making, liquidity solutions, and potential investment introductions |
+| Payment Institutions | Stablecoin reserves and reliable conversions | OTC execution, wholesale stablecoins, and settlement liquidity |
+
+CTA: Explore an Institutional Partnership
+
+## 8. CONTACT SECTION
+
+Headline: Let's Put Liquidity to Work.
+
+Connect with Vantrex to discuss liquidity provision, market making, OTC transactions, and institutional partnerships.
+
+Inquiry categories:
+
+Provide Liquidity / Capital Partnership
+
+Request Market Making
+
+Institutional OTC / Stablecoin Liquidity
+
+Strategic Partnership
+
+The form should contain company name, contact name, business email, inquiry category, and message.
+
+## 9. Website Design & Technical Direction
+
+| Element | Direction |
+| --- | --- |
+| Overall impression | Premium, institutional, modern, credible, medium-sized financial firm |
+| Visual identity | Deep navy, dark blue, silver, off-white; restrained accent colors |
+| Typography | Strong headlines, concise descriptions, professional sans-serif |
+| Layout | Spacious, well-structured sections with minimal visual clutter |
+| Graphics | Abstract liquidity flows and network diagrams used sparingly |
+| Navigation | Home, Liquidity Management, Market Making, Institutional OTC, Contact |
+| Interactions | Simple forms, dropdown navigation, subtle hover effects |
+| Dynamic content | Minimal — no real-time order books, price feeds, client dashboards, or pool performance charts |
+| Content management | Mostly static pages, easily updated without continuous operations |
+
+Do not display invented AUM, liquidity pool sizes, trading volumes, institutional clients, partnerships, or guaranteed returns. Company capabilities should reflect what is actually operational at launch.
+
+## 10. Final Brand Messaging
+
+| Area | Main Message |
+| --- | --- |
+| Company | Capital in Motion. Markets in Reach. |
+| Liquidity Management | Capital That Finds Its Market. |
+| Market Making | Liquidity That Moves Markets. |
+| Institutional OTC | The Assets You Need. The Liquidity to Move Them. |
+| Partnerships | Different Markets. Shared Opportunities. |
+| Contact | Let's Put Liquidity to Work. |
+
+### Final Business Concept
+
+Vantrex has one clearly defined function within the group:
+
+Source institutional liquidity, manage it efficiently, and supply it wherever investment, trading, and payment markets require it.
+
+The three products fulfill that function in complementary ways:
+
+Liquidity Management builds and allocates the pool. Market Making deploys inventory into active markets and builds trading relationships. Institutional OTC sources, converts, and delivers digital assets to institutions.
+
+Together, they position Vantrex as an institutional liquidity hub connecting VaultAlpha's investment ecosystem, Velorapay's payment network, and the broader digital-asset market.
+
+END OF SOURCE BRIEF. Build and verify the complete website now using every requirement above.
