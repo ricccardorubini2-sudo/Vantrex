@@ -118,16 +118,19 @@ export function SiteHeader() {
     }
   }
 
+  const solutionsActive = nav.products.some((product) => product.href === pathname);
+  const linkClass = (active: boolean) =>
+    `relative inline-flex h-10 items-center px-3 text-base font-medium text-black ${
+      active ? "after:absolute after:inset-x-3 after:bottom-0 after:h-0.5 after:bg-accent" : ""
+    }`;
+
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-offwhite/95 backdrop-blur">
-      <div className="mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between px-5 sm:px-8" inert={mobileOpen ? true : undefined}>
+    <header className="sticky top-0 z-40 bg-white">
+      <div className="mx-auto flex h-[68px] w-full max-w-[1200px] items-center justify-between px-5 sm:px-8" inert={mobileOpen ? true : undefined}>
+        <div className="flex items-center gap-8">
         <Logo />
         <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
-          <Link
-            href={nav.home.href}
-            aria-current={pathname === nav.home.href ? "page" : undefined}
-            className="rounded-md px-3 py-2 text-[15px] font-medium text-navy hover:bg-white"
-          >
+          <Link href={nav.home.href} aria-current={pathname === nav.home.href ? "page" : undefined} className={linkClass(pathname === nav.home.href)}>
             {nav.home.label}
           </Link>
           <div
@@ -141,7 +144,7 @@ export function SiteHeader() {
             <button
               ref={solutionsButtonRef}
               type="button"
-              className="inline-flex min-h-11 items-center gap-1 rounded-md px-3 text-[15px] font-medium text-navy hover:bg-white"
+              className={`${linkClass(solutionsActive)} gap-1`}
               aria-expanded={solutionsOpen}
               aria-controls={solutionsId}
               onClick={() => setSolutionsOpen((open) => !open)}
@@ -152,30 +155,33 @@ export function SiteHeader() {
               </span>
             </button>
             {solutionsOpen ? (
-              <div id={solutionsId} className="absolute right-0 top-full z-20 mt-2 w-80 rounded-xl border border-line bg-white p-2 shadow-[0_12px_40px_rgba(8,20,38,0.08)]">
+              <div id={solutionsId} className="absolute left-0 top-full z-20 mt-3 w-80 rounded-2xl bg-white p-2 shadow-[0_16px_40px_rgba(0,0,0,0.08)] outline outline-1 outline-[#d1d5db]">
                 {nav.products.map((product) => (
                   <Link
                     key={product.href}
                     href={product.href}
                     aria-current={pathname === product.href ? "page" : undefined}
-                    className="block rounded-lg px-3 py-3 hover:bg-offwhite"
+                    className="block rounded-xl px-3 py-3 hover:bg-offwhite"
                     onClick={() => setSolutionsOpen(false)}
                   >
-                    <span className="block text-[15px] font-medium text-navy">{product.label}</span>
+                    <span className="block text-base font-medium text-black">{product.label}</span>
                     <span className="mt-1 block text-sm text-muted">{product.headline}</span>
                   </Link>
                 ))}
               </div>
             ) : null}
           </div>
-          <Link href={nav.contact.href} className="rounded-md px-3 py-2 text-[15px] font-medium text-navy hover:bg-white">
+        </nav>
+        </div>
+        <div className="hidden md:block">
+          <Link href={nav.contact.href} className="inline-flex h-10 items-center rounded-full bg-accent px-[22px] text-base font-medium text-white hover:bg-[#0036cc]">
             {nav.contact.label}
           </Link>
-        </nav>
+        </div>
         <button
           ref={menuButtonRef}
           type="button"
-          className="inline-flex min-h-11 items-center rounded-md px-3 text-[15px] font-medium text-navy md:hidden"
+          className="inline-flex h-10 items-center rounded-full bg-[#f3f4f6] px-4 text-base font-medium text-black md:hidden"
           aria-expanded={mobileOpen}
           aria-controls={mobileId}
           onClick={() => setMobileOpen((open) => !open)}
@@ -184,11 +190,11 @@ export function SiteHeader() {
         </button>
       </div>
       {mobileOpen ? (
-        <div ref={mobileRef} id={mobileId} className="fixed inset-0 z-50 overflow-y-auto bg-offwhite px-5 py-5 md:hidden">
+        <div ref={mobileRef} id={mobileId} className="fixed inset-0 z-50 overflow-y-auto bg-white px-5 py-5 md:hidden">
           <div className="flex items-center justify-between">
             <button
               type="button"
-              className="order-2 inline-flex min-h-11 items-center rounded-md px-3 text-[15px] font-medium text-navy"
+              className="order-2 inline-flex h-10 items-center rounded-full bg-[#f3f4f6] px-4 text-base font-medium text-black"
               onClick={closeMobile}
             >
               Close menu
@@ -198,7 +204,7 @@ export function SiteHeader() {
             </div>
           </div>
           <nav aria-label="Mobile" className="mt-10 flex flex-col">
-            <Link href={nav.home.href} className="border-b border-line py-4 text-2xl text-navy" onClick={() => setMobileOpen(false)}>
+            <Link href={nav.home.href} className="border-b border-line py-4 text-2xl text-black" onClick={() => setMobileOpen(false)}>
               {nav.home.label}
             </Link>
             <p className="pb-2 pt-6 text-sm font-medium text-muted">{nav.solutionsLabel}</p>
@@ -206,13 +212,13 @@ export function SiteHeader() {
               <Link
                 key={product.href}
                 href={product.href}
-                className="border-b border-line py-4 text-xl text-navy"
+                className="border-b border-line py-4 text-xl text-black"
                 onClick={() => setMobileOpen(false)}
               >
                 {product.label}
               </Link>
             ))}
-            <Link href={nav.contact.href} className="py-4 text-2xl text-navy" onClick={() => setMobileOpen(false)}>
+            <Link href={nav.contact.href} className="py-4 text-2xl text-black" onClick={() => setMobileOpen(false)}>
               {nav.contact.label}
             </Link>
           </nav>

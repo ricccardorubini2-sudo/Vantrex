@@ -233,7 +233,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={status === "submitting"}
-          className="inline-flex min-h-11 items-center justify-center rounded-md bg-accent px-5 text-[15px] font-medium text-white transition-colors hover:bg-[#244db3] disabled:cursor-wait disabled:opacity-70"
+          className="inline-flex min-h-14 items-center justify-center rounded-full bg-accent px-7 text-xl font-medium text-white transition-colors hover:bg-[#0036cc] disabled:cursor-wait disabled:opacity-70"
         >
           {status === "submitting" ? "Sending…" : "Send Inquiry"}
         </button>

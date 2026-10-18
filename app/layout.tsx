@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Manrope } from "next/font/google";
+import { Inter, Onest } from "next/font/google";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { getSiteUrl } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], display: "swap", variable: "--font-inter" });
-const manrope = Manrope({ subsets: ["latin"], display: "swap", variable: "--font-manrope" });
+const onest = Onest({ subsets: ["latin"], display: "swap", variable: "--font-onest" });
 
 const siteUrl = getSiteUrl();
 
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#081426",
+  themeColor: "#0a4bff",
   width: "device-width",
   initialScale: 1,
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
+    <html lang="en" className={`${inter.variable} ${onest.variable}`}>
       <body>
         <a
           href="#main"

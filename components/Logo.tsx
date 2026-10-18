@@ -17,7 +17,7 @@ export function Logo({ tone = "dark" }: { tone?: "dark" | "light" }) {
       <span className={slot} data-logo-slot="reserved" aria-hidden="true">
         {logoSrc ? <Image src={logoSrc} alt="" width={40} height={40} /> : null}
       </span>
-      <span className={`font-display text-[1.35rem] font-semibold tracking-[-0.03em] ${name}`}>Vantrex</span>
+      <span className={`text-[1.35rem] font-medium tracking-[-0.02em] ${name}`}>Vantrex</span>
     </Link>
   );
 }

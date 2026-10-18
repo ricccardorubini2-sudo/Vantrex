@@ -5,10 +5,11 @@ import { usePathname, useRouter } from "next/navigation";
 import type { MouseEvent, ReactNode } from "react";
 
 const variants = {
-  accent: "bg-accent text-white hover:bg-[#244db3]",
-  light: "bg-offwhite text-navy hover:bg-white",
-  outline: "border border-silver/80 text-offwhite hover:border-white",
-  quiet: "border border-[#c5ced6] bg-white text-navy hover:border-blue",
+  accent: "bg-accent text-white hover:bg-[#0036cc]",
+  light: "bg-white text-black hover:bg-[#f3f4f6]",
+  outline: "bg-[#f3f4f6] text-black hover:bg-[#e5e7eb]",
+  inverse: "border border-white/70 bg-transparent text-white hover:bg-white/10",
+  quiet: "bg-[#f3f4f6] text-black hover:bg-[#e5e7eb]",
 } as const;
 
 export function ButtonLink({
@@ -47,7 +48,7 @@ export function ButtonLink({
     <Link
       href={href}
       onClick={onClick}
-      className={`inline-flex min-h-11 items-center justify-center rounded-md px-5 text-[15px] font-medium transition-colors ${variants[variant]}`}
+      className={`inline-flex min-h-14 items-center justify-center rounded-full px-7 text-xl font-medium transition-colors ${variants[variant]}`}
     >
       {children}
     </Link>

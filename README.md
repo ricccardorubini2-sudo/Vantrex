@@ -17,7 +17,7 @@ Copy `.env.example` to `.env.local` when you have real values. The site builds a
 
 Public copy and structured lists live in `lib/content.ts`. Navigation labels, product routes, partnership rows, and form categories are in that file.
 
-Colors and type tokens are in `app/globals.css`. Headings use Manrope and body text uses Inter, loaded in `app/layout.tsx`.
+Colors and type tokens are in `app/globals.css`. Headings use Onest and body text uses Inter, loaded in `app/layout.tsx`.
 
 ## Logo
 

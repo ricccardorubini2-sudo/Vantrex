@@ -8,11 +8,11 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <section className="mx-auto w-full max-w-[1200px] px-5 py-24 sm:px-8">
-      <h1 className="text-[clamp(2.25rem,5vw,3.5rem)] text-navy">Page not found</h1>
-      <p className="mt-4 max-w-xl text-[17px] leading-8 text-muted">This address is not part of the Vantrex website.</p>
+    <section className="mx-auto flex w-full max-w-[840px] flex-col items-center px-5 py-24 text-center sm:px-8">
+      <h1 className="text-[clamp(2.25rem,5vw,2.75rem)] text-black">Page not found</h1>
+      <p className="mt-4 max-w-xl text-xl leading-8 text-black">This address is not part of the Vantrex website.</p>
       <p className="mt-8">
-        <Link href="/" className="inline-flex min-h-11 items-center font-medium text-navy underline decoration-silver underline-offset-4">
+        <Link href="/" className="inline-flex min-h-14 items-center rounded-full bg-accent px-7 text-xl font-medium text-white hover:bg-[#0036cc]">
           Home
         </Link>
       </p>
