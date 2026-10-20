@@ -162,6 +162,23 @@ textarea.field-input {
   }
 }
 
+@media print {
+  header,
+  footer,
+  [role="region"][aria-label="Cookie notice"] {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

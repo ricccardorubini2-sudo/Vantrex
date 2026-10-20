@@ -38,10 +38,7 @@ export function SiteHeader() {
   }, [solutionsOpen]);
 
   useEffect(() => {
-    if (pathname !== routes.home) {
-      setOverHero(false);
-      return;
-    }
+    if (pathname !== routes.home) return;
 
     function update() {
       setOverHero(window.scrollY < Math.max(window.innerHeight - 96, 120));

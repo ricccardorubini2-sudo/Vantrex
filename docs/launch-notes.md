@@ -50,7 +50,25 @@ Confirm which of the following are operational before public launch. If a senten
 - The VaultAlpha introduction path for suitable projects, including the independent-investment qualification.
 - The Velorapay payment and settlement relationship.
 - External institutional counterparty coverage.
-- Any legal entity name, registration, address, regulatory status, or social profile that should appear. None were supplied, so none are published.
+- Legal entity details are now published from `lib/config.ts` (VANTREX LLC, Florida document number L26000141168, Jupiter, FL address) on the footer, About, and Company Information pages. No regulatory status or social profile has been supplied; see `docs/launch-inputs.md`.
+
+## Supporting pages added (October 2026)
+
+- `/about`, `/legal`, `/privacy-policy`, `/cookie-policy`, `/terms-of-use`,
+  `/risk-disclosure`, `/privacy-request`, `/accessibility`, plus a custom
+  error state. One typed configuration lives in `lib/config.ts`; cookie
+  inventory in `lib/cookies.ts`; policy copy in `lib/legal.ts`.
+- Cookie consent is necessary-only (no optional integrations exist in the
+  codebase): versioned 180-day preference state in `lib/consent.ts`, banner
+  and accessible preferences dialog in `components/ConsentManager.tsx`,
+  footer "Cookie settings" control on every page.
+- Privacy requests post to `/api/privacy-request` and share the SMTP
+  delivery path with the contact form. Without SMTP they return an honest
+  "delivery unavailable" state; a submission is never reported as completed
+  deletion.
+- Social links (LinkedIn, Telegram, X) are implemented but hidden until
+  verified URLs are set in `lib/config.ts`. Outstanding inputs are listed
+  in `docs/launch-inputs.md`.
 
 ## Needs configuration
 

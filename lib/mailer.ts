@@ -1,5 +1,6 @@
 import nodemailer from "nodemailer";
 import type { InquiryInput } from "./inquiry";
+import type { PrivacyRequestInput } from "./privacy-request";
 
 export type SmtpConfig = {
   configured: boolean;
@@ -34,6 +35,42 @@ export function getSmtpConfig(): SmtpConfig {
 
 function safeHeader(value: string) {
   return value.replace(/[\r\n]/g, " ").trim();
+}
+
+export async function sendPrivacyRequest(input: PrivacyRequestInput) {
+  const config = getSmtpConfig();
+  if (!config.configured) return { ok: false as const, reason: "unconfigured" as const };
+
+  try {
+    const transporter = nodemailer.createTransport({
+      host: config.host,
+      port: config.port,
+      secure: config.port === 465,
+      auth: config.user ? { user: config.user, pass: config.pass } : undefined,
+    });
+
+    await transporter.sendMail({
+      from: config.from,
+      to: config.to,
+      replyTo: safeHeader(input.email),
+      subject: `Vantrex privacy request — ${input.requestType}`,
+      text: [
+        `Request type: ${input.requestType}`,
+        `Contact email: ${input.email}`,
+        `Name: ${input.name || "(not provided)"}`,
+        `Company: ${input.company || "(not provided)"}`,
+        `Country/region: ${input.region || "(not provided)"}`,
+        "",
+        "Details:",
+        input.details || "(none provided)",
+      ].join("\n"),
+    });
+
+    return { ok: true as const };
+  } catch {
+    console.error(JSON.stringify({ scope: "privacy-request", outcome: "delivery_failed" }));
+    return { ok: false as const, reason: "delivery_failed" as const };
+  }
 }
 
 export async function sendInquiry(input: InquiryInput) {

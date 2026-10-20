@@ -237,6 +237,14 @@ export function ContactForm() {
         >
           {status === "submitting" ? "Sending…" : "Send Inquiry"}
         </button>
+        <p className="mt-4 max-w-xl text-sm leading-6 text-muted">
+          We use the details you provide only to respond to this enquiry. Submitting this form is not consent to
+          marketing. See our{" "}
+          <a href="/privacy-policy" className="font-medium text-accent underline underline-offset-4">
+            Privacy Policy
+          </a>
+          .
+        </p>
       </div>
       <div
         ref={statusRef}

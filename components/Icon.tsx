@@ -36,6 +36,9 @@ type IconName =
   | "database"
   | "users-round"
   | "droplets"
+  | "linkedin"
+  | "telegram"
+  | "x"
   | "hand-coins";
 
 export function Icon({

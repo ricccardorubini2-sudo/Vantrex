@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test lib/content.test.ts lib/inquiry.test.ts",
+    "test": "tsx --test lib/content.test.ts lib/inquiry.test.ts lib/consent.test.ts lib/privacy-request.test.ts",
     "check": "npm run typecheck && npm run lint && npm run test"
   },
   "dependencies": {
