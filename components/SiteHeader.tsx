@@ -3,18 +3,20 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
-import { nav } from "@/lib/content";
+import { nav, routes } from "@/lib/content";
 import { Logo } from "./Logo";
 
 export function SiteHeader() {
   const pathname = usePathname();
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [overHero, setOverHero] = useState(pathname === routes.home);
   const [path, setPath] = useState(pathname);
   if (path !== pathname) {
     setPath(pathname);
     setSolutionsOpen(false);
     setMobileOpen(false);
+    setOverHero(pathname === routes.home);
   }
   const solutionsRef = useRef<HTMLDivElement>(null);
   const solutionsButtonRef = useRef<HTMLButtonElement>(null);
@@ -31,6 +33,25 @@ export function SiteHeader() {
       solutionsRef.current?.querySelector("a")?.focus();
     }
   }, [solutionsOpen]);
+
+  useEffect(() => {
+    if (pathname !== routes.home) {
+      setOverHero(false);
+      return;
+    }
+
+    function update() {
+      setOverHero(window.scrollY < Math.max(window.innerHeight - 96, 120));
+    }
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, [pathname]);
 
   useEffect(() => {
     function onPointerDown(event: MouseEvent) {
@@ -119,16 +140,21 @@ export function SiteHeader() {
   }
 
   const solutionsActive = nav.products.some((product) => product.href === pathname);
+  const onHero = pathname === routes.home && overHero && !mobileOpen;
   const linkClass = (active: boolean) =>
-    `relative inline-flex h-10 items-center px-3 text-base font-medium text-black ${
-      active ? "after:absolute after:inset-x-3 after:bottom-0 after:h-0.5 after:bg-accent" : ""
-    }`;
+    `relative inline-flex h-10 items-center px-3 text-base font-medium transition-colors duration-200 ${
+      onHero ? "text-white" : "text-ink"
+    } ${active ? "after:absolute after:inset-x-3 after:bottom-0 after:h-0.5 after:bg-accent" : ""}`;
 
   return (
-    <header className="sticky top-0 z-40 bg-white">
+    <header
+      className={`sticky top-0 z-40 transition-colors duration-200 ${
+        onHero ? "border-b border-transparent bg-transparent" : "border-b border-line bg-white"
+      }`}
+    >
       <div className="mx-auto flex h-[68px] w-full max-w-[1200px] items-center justify-between px-5 sm:px-8" inert={mobileOpen ? true : undefined}>
         <div className="flex items-center gap-8">
-        <Logo />
+        <Logo tone={onHero ? "light" : "dark"} />
         <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
           <Link href={nav.home.href} aria-current={pathname === nav.home.href ? "page" : undefined} className={linkClass(pathname === nav.home.href)}>
             {nav.home.label}
@@ -155,17 +181,24 @@ export function SiteHeader() {
               </span>
             </button>
             {solutionsOpen ? (
-              <div id={solutionsId} className="absolute left-0 top-full z-20 mt-3 w-80 rounded-2xl bg-white p-2 shadow-[0_16px_40px_rgba(0,0,0,0.08)] outline outline-1 outline-[#d1d5db]">
+              <div
+                id={solutionsId}
+                className={`absolute left-0 top-full z-20 mt-3 w-80 rounded-2xl border bg-transparent p-2 backdrop-blur-xl ${
+                  onHero
+                    ? "border-white/35 shadow-[0_16px_40px_rgba(0,0,0,0.28)]"
+                    : "border-line shadow-[0_16px_40px_rgba(8,20,38,0.10)]"
+                }`}
+              >
                 {nav.products.map((product) => (
                   <Link
                     key={product.href}
                     href={product.href}
                     aria-current={pathname === product.href ? "page" : undefined}
-                    className="block rounded-xl px-3 py-3 hover:bg-offwhite"
+                    className={`block rounded-xl px-3 py-3 transition-colors ${onHero ? "hover:bg-white/15" : "hover:bg-navy/5"}`}
                     onClick={() => setSolutionsOpen(false)}
                   >
-                    <span className="block text-base font-medium text-black">{product.label}</span>
-                    <span className="mt-1 block text-sm text-muted">{product.headline}</span>
+                    <span className={`block text-base font-medium ${onHero ? "text-white" : "text-navy"}`}>{product.label}</span>
+                    <span className={`mt-1 block text-sm ${onHero ? "text-white/80" : "text-muted"}`}>{product.headline}</span>
                   </Link>
                 ))}
               </div>
@@ -174,14 +207,16 @@ export function SiteHeader() {
         </nav>
         </div>
         <div className="hidden md:block">
-          <Link href={nav.contact.href} className="inline-flex h-10 items-center rounded-full bg-accent px-[22px] text-base font-medium text-white hover:bg-[#0036cc]">
+          <Link href={nav.contact.href} className="inline-flex h-10 items-center rounded-full bg-accent px-[22px] text-base font-medium text-white transition-colors duration-200 hover:bg-accent-hover">
             {nav.contact.label}
           </Link>
         </div>
         <button
           ref={menuButtonRef}
           type="button"
-          className="inline-flex h-10 items-center rounded-full bg-[#f3f4f6] px-4 text-base font-medium text-black md:hidden"
+          className={`inline-flex h-10 items-center rounded-full px-4 text-base font-medium md:hidden ${
+            onHero ? "bg-white/15 text-white" : "bg-offwhite text-ink"
+          }`}
           aria-expanded={mobileOpen}
           aria-controls={mobileId}
           onClick={() => setMobileOpen((open) => !open)}

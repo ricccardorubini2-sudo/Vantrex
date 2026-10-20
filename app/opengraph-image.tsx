@@ -9,17 +9,17 @@ export default function OpenGraphImage() {
     (
       <div
         style={{
-          background: "#ffffff",
+          background: "#081426",
           width: "100%",
           height: "100%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          color: "#000000",
+          color: "#F7F8FA",
         }}
       >
-        <div style={{ fontSize: 28, color: "#0A4BFF" }}>Institutional Digital Asset Liquidity Firm</div>
+        <div style={{ fontSize: 28, color: "#BBC4CE" }}>Institutional Digital Asset Liquidity Firm</div>
         <div style={{ fontSize: 84, marginTop: 20 }}>Vantrex</div>
         <div style={{ fontSize: 36, marginTop: 18 }}>Capital in Motion. Markets in Reach.</div>
       </div>

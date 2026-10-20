@@ -57,6 +57,19 @@ export const hero = {
   secondaryCta: "Partner With Us",
 };
 
+export const metrics = {
+  headline: "Liquidity at Scale. Markets in Motion.",
+  subtitle: "Our institutional liquidity capacity, trading activity, and market connectivity.",
+  rows: [
+    { label: "Liquidity Under Management", value: "$18M", icon: "wallet" as const },
+    { label: "Monthly Trading Volume", value: "$105M", icon: "chart-line" as const },
+    { label: "Institutional Liquidity Partners", value: "10", icon: "users-round" as const },
+    { label: "Connected CEXs", value: "8", icon: "globe" as const },
+    { label: "Institutional Clients", value: "12", icon: "briefcase" as const },
+    { label: "Supported Digital Assets", value: "6", icon: "coins" as const },
+  ],
+};
+
 export const solutions = {
   headline: "One Liquidity Network. Three Capabilities.",
   items: [
@@ -187,6 +200,39 @@ export const liquidityPage = {
   eyebrow: "Product 01 — Source · Manage · Allocate",
   title: "Capital That Finds Its Market.",
   lede: "We connect institutional digital-asset capital with defined liquidity opportunities across trading, investment, and payment markets.",
+  stats: [
+    { value: "$18M", label: "Liquidity Under Management" },
+    { value: "10", label: "Institutional Liquidity Partners" },
+    { value: "6", label: "Supported Assets" },
+    { value: "12", label: "Institutional Clients" },
+  ],
+  network: {
+    headline: "Institutional Liquidity. Measurable Scale.",
+    subtitle:
+      "Capital, trusted relationships, and active liquidity mandates supporting institutional digital-asset markets.",
+    liquidityFlow: [
+      { name: "FinchTrade", href: "https://finchtrade.com", logo: "/partners/finchtrade.png" },
+      { name: "Kairon Labs", href: "https://kaironlabs.com", logo: "/partners/kairon-labs.png" },
+      { name: "Keyrock", href: "https://keyrock.com", logo: "/partners/keyrock.png" },
+      { name: "GSR", href: "https://www.gsr.io", logo: "/partners/gsr.png" },
+      { name: "Wintermute", href: "https://www.wintermute.com", logo: "/partners/wintermute.png" },
+      { name: "flovtec", href: "https://www.flovtec.com", logo: "/partners/flovtec.png" },
+      { name: "Caladan", href: "https://caladan.xyz", logo: "/partners/caladan.png" },
+      { name: "Auros", href: "https://www.auros.global", logo: "/partners/auros.png" },
+      { name: "B2C2", href: "https://www.b2c2.com", logo: "/partners/b2c2.png" },
+      { name: "Flowdesk", href: "https://www.flowdesk.co", logo: "/partners/flowdesk.png" },
+    ],
+    infrastructureFlow: [
+      { name: "Talos", href: "https://www.talos.com", logo: "/partners/talos.png" },
+      { name: "Copper", href: "https://copper.co", logo: "/partners/copper.png" },
+      { name: "Finery Markets", href: "https://finerymarkets.com", logo: "/partners/finery-markets.png" },
+      { name: "Uniswap", href: "https://uniswap.org", logo: "/partners/uniswap.png" },
+      { name: "Fireblocks", href: "https://www.fireblocks.com", logo: "/partners/fireblocks.png" },
+      { name: "BitGo", href: "https://www.bitgo.com", logo: "/partners/bitgo.png" },
+      { name: "Chainlink", href: "https://chain.link", logo: "/partners/chainlink.png" },
+      { name: "Aave", href: "https://aave.com", logo: "/partners/aave.png" },
+    ],
+  },
   solutionsTitle: "Liquidity Sourced. Liquidity Allocated.",
   services: [
     {
@@ -224,6 +270,37 @@ export const marketMakingPage = {
   eyebrow: "Product 02 — Deploy · Quote · Trade",
   title: "Liquidity That Moves Markets.",
   lede: "We provide direct digital-asset liquidity to exchanges, tokenized-asset markets, and DeFi protocols, supporting market depth, efficient pricing, and active trading.",
+  performance: {
+    headline: "Liquidity in Action. Performance by Design.",
+    subtitle: "Active market coverage, consistent quoting, and institutional liquidity across digital-asset markets.",
+    stats: [
+      { value: "8", label: "Connected CEXs" },
+      { value: "3", label: "DEX / DeFi Venues" },
+      { value: "20", label: "Quoted Trading Pairs" },
+      { value: "$75M", label: "Monthly Trading Volume" },
+      { value: "99%", label: "Quoting Availability" },
+    ],
+  },
+  venues: {
+    headline: "Connected Across Digital Asset Markets.",
+    subtitle:
+      "Supporting liquidity provision across centralized exchanges, decentralized trading venues, and emerging tokenized-asset markets.",
+    cexFlow: [
+      { name: "Binance", href: "https://www.binance.com", logo: "/partners/binance.png" },
+      { name: "OKX", href: "https://www.okx.com", logo: "/partners/okx.png" },
+      { name: "Bybit", href: "https://www.bybit.com", logo: "/partners/bybit.png" },
+      { name: "Gate", href: "https://www.gate.io", logo: "/partners/gate.png" },
+      { name: "Bitget", href: "https://www.bitget.com", logo: "/partners/bitget.png" },
+      { name: "MEXC", href: "https://www.mexc.com", logo: "/partners/mexc.png" },
+      { name: "KuCoin", href: "https://www.kucoin.com", logo: "/partners/kucoin.png" },
+      { name: "Coinstore", href: "https://www.coinstore.com", logo: "/partners/coinstore.png" },
+    ],
+    defiFlow: [
+      { name: "Uniswap", href: "https://uniswap.org", logo: "/partners/uniswap.png" },
+      { name: "Curve", href: "https://curve.fi", logo: "/partners/curve.png" },
+      { name: "PancakeSwap", href: "https://pancakeswap.finance", logo: "/partners/pancakeswap.png" },
+    ],
+  },
   solutionsTitle: "Where Markets Need Depth, We Bring Liquidity.",
   services: [
     {
@@ -268,6 +345,17 @@ export const otcPage = {
   eyebrow: "Product 03 — Source · Exchange · Settle",
   title: "The Assets You Need. The Liquidity to Move Them.",
   lede: "Access institutional digital-asset liquidity for large transactions, stablecoin conversions, and treasury settlement.",
+  performance: {
+    headline: "Institutional Execution. Liquidity at Scale.",
+    subtitle:
+      "Deep asset liquidity, competitive execution, and reliable settlement for institutional digital-asset transactions.",
+    stats: [
+      { value: "$30M", label: "Monthly OTC Trading Volume" },
+      { value: "20", label: "Active OTC Counterparties" },
+      { value: "$100K–$1.5M", label: "Typical Transaction Size" },
+      { value: "$6M", label: "Dedicated Stablecoin Liquidity" },
+    ],
+  },
   solutionsTitle: "Institutional Liquidity, Without the Fragmentation.",
   services: [
     {

@@ -20,10 +20,11 @@ export function CtaBand({
   showPartnerships?: boolean;
 }) {
   return (
-    <section className="bg-[#0036cc] text-white">
+    <section className="bg-navy text-white">
       <div className="mx-auto flex w-full max-w-[840px] flex-col items-center px-5 py-20 text-center sm:px-8 md:py-24">
+        <span className="mb-5 block h-px w-10 bg-accent" aria-hidden="true" />
         <h2 className="text-[clamp(2.25rem,4vw,2.75rem)] text-white">{title}</h2>
-        <p className="mt-5 max-w-2xl text-xl leading-8 text-white">{children}</p>
+        <p className="mt-5 max-w-2xl text-xl leading-8 text-[#d7e0ea]">{children}</p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center">
           {actions.map((action) => (
             <ButtonLink key={action.label} href={action.href} variant={action.variant}>
