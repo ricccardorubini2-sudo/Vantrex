@@ -16,8 +16,8 @@ export function Logo({ tone = "dark" }: { tone?: "dark" | "light" }) {
 
   return (
     <Link href="/" className="inline-flex items-center gap-3 rounded-sm" aria-label="Vantrex home">
-      <Image src={src} alt="" width={800} height={299} priority className="h-8 w-auto shrink-0" aria-hidden="true" />
-      <span className={`text-[1.35rem] font-medium tracking-[-0.02em] ${name}`}>Vantrex</span>
+      <Image src={src} alt="" width={800} height={299} priority className="h-9 w-auto shrink-0" aria-hidden="true" />
+      <span className={`font-display text-[1.65rem] font-semibold leading-none tracking-[-0.02em] ${name}`}>Vantrex</span>
     </Link>
   );
 }

@@ -35,6 +35,7 @@ type IconName =
   | "gem"
   | "database"
   | "users-round"
+  | "droplets"
   | "hand-coins";
 
 export function Icon({

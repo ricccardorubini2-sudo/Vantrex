@@ -4,7 +4,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState, type KeyboardEvent as ReactKeyboardEvent } from "react";
 import { nav, routes } from "@/lib/content";
+import { Icon, type IconName } from "./Icon";
 import { Logo } from "./Logo";
+
+const productIcons: IconName[] = ["droplets", "chart-candlestick", "handshake"];
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -142,7 +145,7 @@ export function SiteHeader() {
   const solutionsActive = nav.products.some((product) => product.href === pathname);
   const onHero = pathname === routes.home && overHero && !mobileOpen;
   const linkClass = (active: boolean) =>
-    `relative inline-flex h-10 items-center px-3 text-base font-medium transition-colors duration-200 ${
+    `relative inline-flex h-10 items-center px-3 font-display text-base font-medium transition-colors duration-200 ${
       onHero ? "text-white" : "text-ink"
     } ${active ? "after:absolute after:inset-x-3 after:bottom-0 after:h-0.5 after:bg-accent" : ""}`;
 
@@ -152,10 +155,9 @@ export function SiteHeader() {
         onHero ? "border-b border-transparent bg-transparent" : "border-b border-line bg-white"
       }`}
     >
-      <div className="mx-auto flex h-[68px] w-full max-w-[1200px] items-center justify-between px-5 sm:px-8" inert={mobileOpen ? true : undefined}>
-        <div className="flex items-center gap-8">
+      <div className="relative mx-auto flex h-[68px] w-full max-w-[1200px] items-center justify-between px-5 sm:px-8" inert={mobileOpen ? true : undefined}>
         <Logo tone={onHero ? "light" : "dark"} />
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 md:flex" aria-label="Primary">
           <Link href={nav.home.href} aria-current={pathname === nav.home.href ? "page" : undefined} className={linkClass(pathname === nav.home.href)}>
             {nav.home.label}
           </Link>
@@ -189,32 +191,37 @@ export function SiteHeader() {
                     : "border-line shadow-[0_16px_40px_rgba(8,20,38,0.10)]"
                 }`}
               >
-                {nav.products.map((product) => (
+                {nav.products.map((product, index) => (
                   <Link
                     key={product.href}
                     href={product.href}
                     aria-current={pathname === product.href ? "page" : undefined}
-                    className={`block rounded-xl px-3 py-3 transition-colors ${onHero ? "hover:bg-white/15" : "hover:bg-navy/5"}`}
+                    className={`flex items-start gap-3 rounded-xl px-3 py-3 transition-colors ${onHero ? "hover:bg-white/15" : "hover:bg-navy/5"}`}
                     onClick={() => setSolutionsOpen(false)}
                   >
-                    <span className={`block text-base font-medium ${onHero ? "text-white" : "text-navy"}`}>{product.label}</span>
-                    <span className={`mt-1 block text-sm ${onHero ? "text-white/80" : "text-muted"}`}>{product.headline}</span>
+                    <Icon
+                      name={productIcons[index] ?? "layers"}
+                      className={`mt-0.5 h-6 w-6 ${onHero ? "text-white" : "text-accent"}`}
+                    />
+                    <span className="min-w-0">
+                      <span className={`block font-display text-base font-medium ${onHero ? "text-white" : "text-navy"}`}>{product.label}</span>
+                      <span className={`mt-1 block text-sm ${onHero ? "text-white/80" : "text-muted"}`}>{product.headline}</span>
+                    </span>
                   </Link>
                 ))}
               </div>
             ) : null}
           </div>
         </nav>
-        </div>
         <div className="hidden md:block">
-          <Link href={nav.contact.href} className="inline-flex h-10 items-center rounded-full bg-accent px-[22px] text-base font-medium text-white transition-colors duration-200 hover:bg-accent-hover">
-            {nav.contact.label}
+          <Link href={nav.contact.href} className="inline-flex h-10 items-center rounded-full bg-accent px-[22px] font-display text-base font-medium uppercase tracking-[0.06em] text-white transition-colors duration-200 hover:bg-accent-hover">
+            Get in Touch
           </Link>
         </div>
         <button
           ref={menuButtonRef}
           type="button"
-          className={`inline-flex h-10 items-center rounded-full px-4 text-base font-medium md:hidden ${
+          className={`inline-flex h-10 items-center rounded-full px-4 font-display text-base font-medium md:hidden ${
             onHero ? "bg-white/15 text-white" : "bg-offwhite text-ink"
           }`}
           aria-expanded={mobileOpen}
