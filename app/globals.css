@@ -45,7 +45,8 @@
   }
 
   ::selection {
-    background: #dbe4ff;
+    background: var(--color-accent);
+    color: #ffffff;
   }
 }
 

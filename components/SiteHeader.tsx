@@ -182,10 +182,10 @@ export function SiteHeader() {
             {solutionsOpen ? (
               <div
                 id={solutionsId}
-                className={`absolute left-0 top-full z-20 mt-3 w-80 rounded-2xl border bg-transparent p-2 backdrop-blur-xl ${
+                className={`absolute left-0 top-full z-20 mt-3 w-80 rounded-2xl border p-2 shadow-[0_16px_40px_rgba(8,20,38,0.14)] ${
                   onHero
-                    ? "border-white/35 shadow-[0_16px_40px_rgba(0,0,0,0.28)]"
-                    : "border-line shadow-[0_16px_40px_rgba(8,20,38,0.10)]"
+                    ? "border-white/20 bg-navy/95 backdrop-blur-xl"
+                    : "border-line bg-white"
                 }`}
               >
                 {nav.products.map((product, index) => (
@@ -193,7 +193,7 @@ export function SiteHeader() {
                     key={product.href}
                     href={product.href}
                     aria-current={pathname === product.href ? "page" : undefined}
-                    className={`flex items-start gap-3 rounded-xl px-3 py-3 transition-colors ${onHero ? "hover:bg-white/15" : "hover:bg-navy/5"}`}
+                    className={`flex items-start gap-3 rounded-xl px-3 py-3 transition-colors ${onHero ? "hover:bg-white/10" : "hover:bg-navy/5"}`}
                     onClick={() => setSolutionsOpen(false)}
                   >
                     <Icon

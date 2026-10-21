@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   company,
@@ -17,12 +18,12 @@ import { Icon, type IconName } from "./Icon";
 import { MetricsBand } from "./MetricsBand";
 import { PartnershipTable } from "./PartnershipTable";
 
-const solutionIcons: IconName[] = ["layers", "arrow-left-right", "handshake"];
+const solutionIcons: IconName[] = ["droplets", "chart-candlestick", "handshake"];
 const counterpartyIcons: IconName[] = ["building-2", "briefcase", "network", "credit-card", "landmark"];
-const groupIcons: Record<string, IconName> = {
-  VaultAlpha: "trending-up",
-  Velorapay: "banknote",
-  Vantrex: "waypoints",
+const groupLogos: Record<string, { src: string; width: number; height: number }> = {
+  VaultAlpha: { src: "/group/vaultalpha.png", width: 173, height: 118 },
+  Velorapay: { src: "/group/velorapay.png", width: 600, height: 389 },
+  Vantrex: { src: "/group/vantrex.png", width: 800, height: 292 },
 };
 
 export function HomePage() {
@@ -38,9 +39,9 @@ export function HomePage() {
           aria-hidden="true"
           className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/55 to-navy/80"
         />
-        <div className="relative z-10 mx-auto flex w-full max-w-[920px] flex-col items-center px-5 pb-16 pt-[calc(68px+4rem)] text-center sm:px-8 md:pb-20 md:pt-[calc(68px+5.5rem)]">
+        <div className="relative z-10 mx-auto flex w-full max-w-[1020px] flex-col items-center px-5 pb-40 pt-[calc(68px+1rem)] text-center sm:px-8 md:pb-52 md:pt-[calc(68px+1.5rem)]">
           <p className="text-base font-medium text-silver">{company.type}</p>
-          <h1 className="mt-4 text-balance text-[clamp(2.5rem,5vw,3.375rem)] leading-[1.22] text-white">{hero.headline}</h1>
+          <h1 className="mt-5 text-balance text-[clamp(2.75rem,6.2vw,4.5rem)] leading-[1.08] text-white">{hero.headline}</h1>
           <p className="mt-6 max-w-2xl text-xl font-normal leading-7 text-white/90">{hero.description}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <ButtonLink href={routes.solutions} variant="accent">
@@ -66,7 +67,7 @@ export function HomePage() {
             {solutions.items.map((item, index) => (
               <li
                 key={item.name}
-                className="group border-b border-line py-10 transition-colors duration-200 last:border-b-0 hover:bg-offwhite/70 lg:border-b-0 lg:px-8 lg:py-12 lg:first:pl-0 lg:last:pr-0 lg:[&:not(:first-child)]:border-l"
+                className="group flex flex-col border-b border-line py-10 transition-colors duration-200 last:border-b-0 hover:bg-offwhite/70 lg:border-b-0 lg:px-8 lg:py-12 lg:first:pl-0 lg:last:pr-0 lg:[&:not(:first-child)]:border-l"
               >
                 <div className="flex items-center justify-between gap-4">
                   <span className="flex h-12 w-12 items-center justify-center border border-line bg-offwhite text-blue transition-colors duration-200 group-hover:border-accent group-hover:text-accent">
@@ -79,7 +80,7 @@ export function HomePage() {
                 <p className="mt-3 text-base leading-7 text-ink">{item.description}</p>
                 <Link
                   href={item.href}
-                  className="mt-7 inline-flex items-center gap-2 text-base font-medium text-blue transition-colors duration-200 hover:text-accent"
+                  className="mt-auto inline-flex items-center gap-2 self-start pt-7 text-base font-medium text-blue transition-colors duration-200 hover:text-accent"
                 >
                   {item.name}
                   <Icon name="arrow-up-right" className="h-4 w-4" />
@@ -139,8 +140,17 @@ export function HomePage() {
                     hub ? "border border-navy bg-navy text-white lg:border-0" : "border border-line bg-white text-ink lg:border-0"
                   }`}
                 >
-                  <div className={`flex items-center gap-3 ${hub ? "text-silver" : "text-blue"}`}>
-                    <Icon name={groupIcons[item.name] ?? "waypoints"} className="h-6 w-6" />
+                  <div className="flex items-center gap-3">
+                    {groupLogos[item.name] ? (
+                      <Image
+                        src={groupLogos[item.name].src}
+                        alt=""
+                        aria-hidden="true"
+                        width={groupLogos[item.name].width}
+                        height={groupLogos[item.name].height}
+                        className="h-9 w-auto shrink-0 object-contain"
+                      />
+                    ) : null}
                     <h3 className={`text-[1.7rem] leading-9 ${hub ? "text-white" : "text-navy"}`}>{item.name}</h3>
                   </div>
                   <p className={`mt-4 text-base leading-7 ${hub ? "text-white/90" : "text-ink"}`}>{item.summary}</p>

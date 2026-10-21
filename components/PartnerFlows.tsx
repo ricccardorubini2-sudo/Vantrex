@@ -88,7 +88,7 @@ export function PartnerFlows({
         </div>
       ) : null}
       <div
-        className={`mx-auto w-full max-w-[1100px] space-y-1 px-2 pb-14 sm:px-4 md:pb-16 ${headline ? "mt-10" : ""}`}
+        className={`mx-auto w-full max-w-[1100px] space-y-4 px-2 pb-14 sm:px-4 md:pb-16 ${headline ? "mt-10" : ""}`}
       >
         <FlowRow partners={primaryFlow} dark={dark} />
         <FlowRow partners={secondaryFlow} reverse dark={dark} />
